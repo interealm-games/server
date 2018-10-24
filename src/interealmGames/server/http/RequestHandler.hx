@@ -3,8 +3,8 @@ package interealmGames.server.http;
 /**
  * 
  */
-typedef RequestHandler =
+interface RequestHandler
 {
-	var path:String; 
-	var handler:Request -> Any;
+	public function getPath():String; 
+	public function getHandler():Request -> Any;
 }

@@ -2,10 +2,15 @@ package interealmGames.server;
 
 import interealmGames.server.http.Request;
 import interealmGames.server.http.RequestHandler;
+import interealmGames.server.http.RequestType;
 import php.Lib;
 
 class RH implements RequestHandler {
 	public function new(){}
+	
+	public function getType() {
+		return RequestType.DELETE;
+	}
 	
 	public function getPath() {
 		return "http://www.google.com";

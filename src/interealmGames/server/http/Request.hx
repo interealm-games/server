@@ -5,11 +5,36 @@ package interealmGames.server.http;
  */
 interface Request 
 {
-	public function getType():RequestType;
+	/**
+	 * Returns the POST Data sent with this request
+	 */
+	@:generic public function getData<T>():T;
 	
-	public function getUrl():String;
-	
+	/**
+	 * Gets a Query String value by the argument name
+	 * @param	name
+	 * @return
+	 */
 	public function getParam(name:String):Null<String>;
 	
-	@:generic public function getData<T>():T;
+	/**
+	 * Gets a named value from the path
+	 * ie. path = '/path/to/{name}/'
+	 * 
+	 * @param	name
+	 * @return
+	 */
+	public function getPathArgument(name:String):Null<String>;
+	
+	/**
+	 * Gets the Request Method
+	 * @return
+	 */
+	public function getType():RequestType;
+	
+	/**
+	 * Not sure what I meant by this.
+	 * @return
+	 */
+	public function getUrl():String;
 }

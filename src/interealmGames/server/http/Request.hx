@@ -11,6 +11,13 @@ interface Request
 	@:generic public function getData<T>():T;
 	
 	/**
+	 * Gets header value
+	 * @param	name
+	 * @return
+	 */
+	public function getHeader(name:String):Null<String>;
+	
+	/**
 	 * Gets a Query String value by the argument name
 	 * @param	name
 	 * @return

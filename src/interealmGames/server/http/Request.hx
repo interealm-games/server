@@ -8,7 +8,7 @@ interface Request
 	/**
 	 * Returns the POST Data sent with this request
 	 */
-	@:generic public function getData<T>():T;
+	public function getData():String;
 	
 	/**
 	 * Gets header value

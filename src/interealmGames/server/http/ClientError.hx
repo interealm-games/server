@@ -9,7 +9,7 @@ class ClientError
 	static var BAD_REQUEST = 0;
 	static var UNAUTHORIZED = 1;
 	static var FORBIDDEN = 3;
-	//static var NOT_ACCEPTABLE = 6; // should be handled by server JSON only
+	//static var NOT_ACCEPTABLE = 6; // should be handled by server, JSON only
 	static var CONFLICT = 9;
 	static var GONE = 10;
 	static var IM_A_TEAPOT = 18;
@@ -39,6 +39,9 @@ class ClientError
 	}
 	
 	static public function amTeapot(?teapotRelatedMessage:String) {
-		return ClientError.create(ClientError.IM_A_TEAPOT, message == null ? "BOW DOWN BEFORE YOUR TEAPOT MASTER!!" : message);
+		return ClientError.create(
+			ClientError.IM_A_TEAPOT, 
+			teapotRelatedMessage == null ? "BOW DOWN BEFORE YOUR TEAPOT MASTER!!" : teapotRelatedMessage
+		);
 	}
 }

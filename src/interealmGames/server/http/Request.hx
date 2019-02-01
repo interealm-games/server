@@ -15,7 +15,7 @@ interface Request
 	 * @param	name
 	 * @return
 	 */
-	public function getHeader(name:String):Null<String>;
+	public function getHeader(name:String):Array<String>;
 	
 	/**
 	 * Gets a Query String value by the argument name

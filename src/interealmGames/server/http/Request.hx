@@ -3,6 +3,7 @@ package interealmGames.server.http;
 typedef CookieOptions = {
 	?expires:Int,
 	?path:String,
+	?domain:String,
 	?secure:Bool,
 	?httpOnly:Bool
 }
@@ -58,5 +59,7 @@ interface Request
 	 * @param	value
 	 * @param	append
 	 */
-	public function setHeader(name:String, value:String, ?options:CookieOptions, ?append:Bool):Void;
+	public function setHeader(name:String, value:String, ?append:Bool):Void;
+	
+	public function setCookie(name:String, value:String, ?options:CookieOptions):Void;
 }

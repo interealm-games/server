@@ -1,5 +1,12 @@
 package interealmGames.server.http;
 
+typedef CookieOptions = {
+	?expires:Int,
+	?path:String,
+	?secure:Bool,
+	?httpOnly:Bool
+}
+
 /**
  * Represents an HTTP request hitting the server
  */
@@ -51,5 +58,5 @@ interface Request
 	 * @param	value
 	 * @param	append
 	 */
-	public function setHeader(name:String, value:String, append:Bool = false):Void;
+	public function setHeader(name:String, value:String, ?options:CookieOptions, ?append:Bool):Void;
 }

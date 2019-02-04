@@ -44,4 +44,12 @@ interface Request
 	 * @return
 	 */
 	public function getUrl():String;
+	
+	/**
+	 * 
+	 * @param	name
+	 * @param	value
+	 * @param	append
+	 */
+	public function setHeader(name:String, value:String, append:Bool = false):Void;
 }

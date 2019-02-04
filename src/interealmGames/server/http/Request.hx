@@ -19,6 +19,13 @@ interface Request
 	public function getData():String;
 	
 	/**
+	 * Gets cookie value
+	 * @param	name
+	 * @return
+	 */
+	public function getCookie(name:String):String;
+	
+	/**
 	 * Gets header value
 	 * @param	name
 	 * @return
@@ -54,12 +61,18 @@ interface Request
 	public function getUrl():String;
 	
 	/**
-	 * 
+	 * Sets a header for response
 	 * @param	name
 	 * @param	value
 	 * @param	append
 	 */
 	public function setHeader(name:String, value:String, ?append:Bool):Void;
 	
+	/**
+	 * Sets a cookie for response
+	 * @param	name
+	 * @param	value
+	 * @param	options
+	 */
 	public function setCookie(name:String, value:String, ?options:CookieOptions):Void;
 }

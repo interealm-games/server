@@ -9,6 +9,7 @@ class ClientError
 	static var BAD_REQUEST = 0;
 	static var UNAUTHORIZED = 1;
 	static var FORBIDDEN = 3;
+	static var NOT_FOUND = 4;
 	//static var NOT_ACCEPTABLE = 6; // should be handled by server, JSON only
 	static var CONFLICT = 9;
 	static var GONE = 10;
@@ -28,6 +29,10 @@ class ClientError
 	
 	static public function forbidden(?message:String) {
 		return ClientError.create(ClientError.FORBIDDEN, message == null ? "" : message);
+	}
+	
+	static public function notFound(?message:String) {
+		return ClientError.create(ClientError.NOT_FOUND, message == null ? "" : message);
 	}
 	
 	static public function conflict(message:String) {

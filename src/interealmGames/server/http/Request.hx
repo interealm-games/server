@@ -1,13 +1,5 @@
 package interealmGames.server.http;
 
-typedef CookieOptions = {
-	?expires:Int,
-	?path:String,
-	?domain:String,
-	?secure:Bool,
-	?httpOnly:Bool
-}
-
 /**
  * Represents an HTTP request hitting the server
  */

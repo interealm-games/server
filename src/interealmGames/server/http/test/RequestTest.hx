@@ -37,6 +37,11 @@ class RequestTest extends Test
 			handler: "/join/{id}[/]",
 			field: "id",
 			value: "1234"
+		}, {
+			requested: "/join/1234/",
+			handler: "/join/{id}[/]",
+			field: "id",
+			value: "1234"
 		}];
 
 		var server = new Server([]);

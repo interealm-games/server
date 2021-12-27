@@ -34,8 +34,8 @@ class Server {
 	}
 
 	public function matchUrl(requestUrl:String, handlerUrl:String):Bool  {
-		var requestParts = requestUrl.split('/');
-		var handlerParts = handlerUrl.replace('[/]','').split('/');
+		var requestParts = requestUrl.split('/').filter(function(str:String) { return str.length > 0; });
+		var handlerParts = handlerUrl.replace('[/]','').split('/').filter(function(str:String) { return str.length > 0; });
 
 		if (requestParts.length != handlerParts.length) {
 			return false;

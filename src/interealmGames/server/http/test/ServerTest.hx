@@ -18,6 +18,10 @@ class ServerTest extends Test
 			requested: "/join/1234",
 			handler: "/join/{id}[/]",
 			match: true
+		}, {
+			requested: "/join/1234/",
+			handler: "/join/{id}[/]",
+			match: true
 		}];
 
 		var server = new Server([]);

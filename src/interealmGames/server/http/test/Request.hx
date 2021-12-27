@@ -82,8 +82,8 @@ class Request implements Interface {
 	 * @return
 	 */
 	public function getPathArgument(name:String):Null<String> {
-		var requestParts = this.url.split('/');
-		var handlerParts = this.handler.path.replace('[/]','').split('/');
+		var requestParts = this.url.split('/').filter(function(str:String) { return str.length > 0; });
+		var handlerParts = this.handler.path.replace('[/]','').split('/').filter(function(str:String) { return str.length > 0; });
 
 		for(i in 0...requestParts.length) {
 			var value = handlerParts[i];

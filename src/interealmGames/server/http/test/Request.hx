@@ -24,6 +24,7 @@ class Request implements Interface {
 	public var headers:Map<String,Array<String>> = new Map();
 	public var params:Map<String,Null<String>> = new Map();
 	public var handler:RequestHandler;
+	private var status:Int;
 	public function new(params:RequestParams) {
 		this.url = params.url;
 		this.type = params.type;
@@ -98,6 +99,14 @@ class Request implements Interface {
 	}
 	
 	/**
+	 * Gets the Status
+	 * @return
+	 */
+	public function getStatus():Int {
+		return this.status;
+	}
+	
+	/**
 	 * Gets the Request Method
 	 * @return
 	 */
@@ -136,5 +145,13 @@ class Request implements Interface {
 	 */
 	public function setCookie(name:String, value:String, ?options:CookieOptions):Void {
 		this.cookies.set(name, value);
+	}
+
+	/**
+	 * Sets a status for response
+	 * @param	status
+	 */
+	public function setStatus(status:Int):Void {
+		this.status = status;
 	}
 }

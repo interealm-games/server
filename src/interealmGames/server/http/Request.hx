@@ -41,6 +41,12 @@ interface Request
 	public function getPathArgument(name:String):Null<String>;
 	
 	/**
+	 * Gets the Status
+	 * @return
+	 */
+	public function getStatus():Int;
+	
+	/**
 	 * Gets the Request Method
 	 * @return
 	 */
@@ -67,4 +73,10 @@ interface Request
 	 * @param	options
 	 */
 	public function setCookie(name:String, value:String, ?options:CookieOptions):Void;
+
+	/**
+	 * Sets a status for response
+	 * @param	status
+	 */
+	public function setStatus(status:Int):Void;
 }

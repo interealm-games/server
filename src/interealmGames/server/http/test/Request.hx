@@ -86,8 +86,9 @@ class Request implements Interface {
 		var handlerParts = this.handler.path.replace('[/]','').split('/');
 
 		for(i in 0...requestParts.length) {
-			if (handlerParts[i].charAt(0) == ':') {
-				if (name == handlerParts[i].substring(1)) {
+			var value = handlerParts[i];
+			if (value.charAt(0) == '{' && value.charAt(value.length - 1) == '}') {
+				if (name == handlerParts[i].substring(1, value.length - 1)) {
 					return requestParts[i];
 				}
 			}

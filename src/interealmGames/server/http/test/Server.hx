@@ -28,6 +28,8 @@ class Server {
 			throw ClientError.notFound();
 		}
 
+		request.handler = handler;
+
 		return handler.handler(request);
 	}
 
@@ -40,7 +42,8 @@ class Server {
 		}
 
 		for(i in 0...requestParts.length) {
-			if (handlerParts[i].length == 0 || handlerParts[i].charAt(0) != ':') {
+			var value = handlerParts[i]; 
+			if (value.length == 0 || !(value.charAt(0) == '{' && value.charAt(value.length - 1) == '}')) {
 				if(requestParts[i] != handlerParts[i]) {
 					return false;
 				}
